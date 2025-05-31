@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<h>Signup</h>
+
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Tektur:wght@400..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+  background-image: url('img/music1.jpg');
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: no-repeat;
+}
+h{
+  font-size: -webkit-xxx-large;
+  position: absolute;
+  left: 32%;
+  padding-top: 80px;
+  color: whitesmoke;
+  }
+  
+.box {
+    width: 500px; 
+    
+    padding: 20px;
+   
+   border-radius: 10px;
+   background-color: transparent;
+   box-shadow: 5px 5px 10px 10px rgba(243, 7, 3, 0.982);
+   height: 400px;
+   position: absolute;
+   top: 50%;
+   left: 37%;
+   transform: translate(-50%, -50%);
+   animation: moving-shadow 3s infinite linear;
+  }
+  @keyframes moving-shadow {
+    0% { box-shadow: 5px 5px 10px rgba(243, 7, 3, 0.982); }
+    25% { box-shadow: -5px 5px 10px rgba(243, 7, 3, 0.982);}
+    50% { box-shadow: -5px -5px 10px rgba(3, 243, 7, 0.982); }
+    75% { box-shadow: 5px -5px 10px rgba(243, 7, 3, 0.982); }
+    100% { box-shadow: 5px 5px 10px rgba(19, 3, 243, 0.982); }
+  }
+
+.fa-solid.fa-envelope.fa-shake{
+  width: 26px;
+  height: 23px;
+  position: absolute;
+  top: 16%;
+  left: 90%;
+}
+
+.fa-solid.fa-user.fa-beat-fade{
+    width: 26px;
+    height: 23px;
+    position: absolute;
+    top: 42%;
+    left: 90%;
+}
+
+.fa-solid.fa-lock.fa-beat-fade{
+    width: 26px;
+    height: 23px;
+    position: absolute;
+    top: 68%;
+    left: 90%;
+}
+
+
+.email{
+  color: whitesmoke;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  display: grid;
+  margin-top: 10px;
+  font-size: 25px;  
+  
+}
+.email input{
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgba(3, 220, 232, 0.982);
+  border-bottom: 1px solid black
+}
+
+
+.username{
+  color: whitesmoke;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  display: grid;
+  margin-top: 50px;
+  font-size: 25px;
+}
+.username input{
+  margin-top: 10px;
+  color: rgba(3, 220, 232, 0.982);
+
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black
+}
+.password{
+  color: whitesmoke;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  
+  display: grid;
+  margin-top: 50px;
+  font-size: 25px;
+}
+.password input{
+  color:rgba(3, 220, 232, 0.982);
+
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px; 
+  background-color: transparent;
+  border: none;
+  outline: none;  
+  border-bottom: 1px solid black
+}
+.btn{
+  width: 500px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 60px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px; 
+  background-color: lightblue;
+}
+.btn:hover{
+  cursor: pointer;
+}
+.already{  color: whitesmoke;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px; 
+  margin-top: 20px;
+  gap: 1em;
+}
+.already .log{
+  color: rgb(5, 93, 148);
+  background-color: transparent;
+  border: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px; 
+}
+.already .log:hover{
+  cursor: pointer;
+}
+/*
+
+*/
+
+</style>
+
+
+    <div class="box">
+
+        <div class="email">E-mail:
+            <input type="email" alt="email" placeholder="enter E-mail">
+            <i class="fa-solid fa-envelope fa-shake"></i>
+        </div>
+        <div class="username">
+            Username:
+            <input type="text" alt="username" placeholder="enter username">
+            <i class="fa-solid fa-user fa-beat-fade"></i>
+        </div>
+        <div class="password">
+            Password:
+            <input type="password" alt="password" placeholder="enter password">
+            <i class="fa-solid fa-lock fa-beat-fade"></i>
+        </div>
+        <button class="btn" alt="btn">Register</button>
+        <div class="already">
+            Already have an account? <button class="log" alt="log">Login</button>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.querySelector('input[type="email"]');
+    const usernameInput = document.querySelector('input[type="text"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+    const registerButton = document.querySelector(".btn");
+
+    // Validate email format
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    // Event listener for Register button
+    registerButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission for now
+
+        const email = emailInput.value.trim();
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (!validateEmail(email)) {
+            alert("Please enter a given feilds!");
+            return;
+        }
+
+        if (username === "") {
+            alert("Username cannot be empty!");
+            return;
+        }
+
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters long!");
+            return;
+        }
+        
+        alert("Registration Successful!");
+        window.location.href = "music-search.html"; // redirect to the desired page
+        
+
+       
+        // Here you can send data to a backend server using Fetch/AJAX
+    });
+
+    // Show/hide password toggle
+    const passwordIcon = document.querySelector(".fa-lock");
+    passwordIcon.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordIcon.classList.remove("fa-lock");
+            passwordIcon.classList.add("fa-unlock");
+        } else {
+            passwordInput.type = "password";
+            passwordIcon.classList.remove("fa-unlock");
+            passwordIcon.classList.add("fa-lock");
+        }
+    });
+});
+
+
+</script>
+
+</html>
