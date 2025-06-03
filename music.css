@@ -8,6 +8,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 20px;
+    scrollbar-width: none;
   }
   .progressbar {
   width: 100%;
@@ -70,7 +71,7 @@ body {
   }
 
 
- button:hover{
+ #schbtn:hover{
     text-shadow:
   1px 1px 2px red,
   0 0 1em blue,
