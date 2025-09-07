@@ -26,7 +26,8 @@ function displayResults(tracks) {
     const trackEl = document.createElement("div");
     trackEl.className = "track";
 
-    trackEl.innerHTML = `
+
+   trackEl.innerHTML = `
       <img src="${track.artworkUrl100}" alt="${track.trackName}">
       <h3>${track.trackName}</h3>
       <p>${track.artistName}</p>
@@ -39,10 +40,21 @@ function displayResults(tracks) {
         <a class="download-btn" href="${track.previewUrl}" download title="Download">
           ${getDownloadSVG()}
         </a>
+        <button class="library-btn" title="Add to Library">❤️</button>
       </div>
       <audio class="hidden-audio" src="${track.previewUrl}"></audio>
     `;
-
+ const libraryBtn = trackEl.querySelector(".library-btn");
+  libraryBtn.addEventListener("click", () => {
+    const songData = {
+      trackId: track.trackId,
+      trackName: track.trackName,
+      artistName: track.artistName,
+      previewUrl: track.previewUrl,
+      artworkUrl100: track.artworkUrl100
+    };
+    addToLibrary(songData);
+  });
     const audio = trackEl.querySelector("audio");
     const playBtn = trackEl.querySelector(".play-btn");
     const progressContainer = trackEl.querySelector(".progress-container");
@@ -134,3 +146,33 @@ document.querySelectorAll(".fa-regular.fa-user.fa-fade").forEach(icon => {
     window.location.href = "login.html";
   });
 });
+// store song in local storage
+let library = JSON.parse(localStorage.getItem("library")) || [];
+
+function addToLibrary(song) {
+  if (!library.find(item => item.trackId === song.trackId)) {
+    library.push(song);
+    localStorage.setItem("library", JSON.stringify(library));
+    alert(`${song.trackName} added to Library!`);
+  } else {
+    alert("Already in Library!");
+  }
+}
+function loadLibrary() {
+  const libraryDiv = document.getElementById("library-list");
+  const library = JSON.parse(localStorage.getItem("library")) || [];
+
+  if (library.length === 0) {
+    libraryDiv.innerHTML = "<p>No songs in library yet.</p>";
+    return;
+  }
+
+  libraryDiv.innerHTML = library.map(song => `
+    <div class="track">
+      <img src="${song.artworkUrl100}" alt="${song.trackName}">
+      <h3>${song.trackName}</h3>
+      <p>${song.artistName}</p>
+      <audio controls src="${song.previewUrl}"></audio>
+    </div>
+  `).join("");
+}
